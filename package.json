@@ -1,0 +1,21 @@
+{
+  "jest": {
+    "verbose": true
+  },
+  "name": "tech_test_8",
+  "version": "1.0.0",
+  "main": "Calculator.js",
+  "license": "MIT",
+  "type": "node",
+  "dependencies": {
+    "@babel/core": "^7.10.3",
+    "@types/jest": "^26.0.3",
+    "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
+    "jest": "^24.1.0",
+    "node": "^14.4.0"
+  },
+  "scripts": {
+    "test": "jest --coverage"
+  }
+}

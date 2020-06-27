@@ -43,6 +43,14 @@ test('getBranding - ID 2', () => {
     expect(result.colours.tertiary).toBe("rgb(51,51,51)");
 })
 
+test('getBranding - User with font not allowed', () => {
+    let result = getBranding({brandId: 3});
+    expect(result.bodyFont).toBe("Lato");
+    expect(result.colours.primary).toBe("rgb(17,17,17)");
+    expect(result.colours.secondary).toBe("rgb(34,34,34)");
+    expect(result.colours.tertiary).toBe("rgb(51,51,51)");
+})
+
 test('getBranding - Brand ID not found', () => {
     let result = getBranding({brandId: 4});
     expect(result.bodyFont).toBe("Lato");
@@ -57,14 +65,6 @@ test('getBranding - User with no brand ID', () => {
     expect(result.colours.primary).toBe("rgb(51,51,51)");
     expect(result.colours.secondary).toBe("rgb(34,34,34)");
     expect(result.colours.tertiary).toBe("rgb(85,85,85)");
-})
-
-test('getBranding - User with font not allowed', () => {
-    let result = getBranding({brandId: 3});
-    expect(result.bodyFont).toBe("Lato");
-    expect(result.colours.primary).toBe("rgb(17,17,17)");
-    expect(result.colours.secondary).toBe("rgb(34,34,34)");
-    expect(result.colours.tertiary).toBe("rgb(51,51,51)");
 })
 
 
