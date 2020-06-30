@@ -27,20 +27,20 @@ const makeScramble = () => {
     const numberOptions = [0, 1, 2, 3, 4, 5]; // 0 = F, 1 = R, 2 = U, 3 = B, 4 = L, 5 = D
     let scramble = []; // scramble of numbers will go in here
     let scrambleMoves = []; // scramble of letters will go in here
-    let bad = true;
+    let badMove = true;
 
-    while (bad) {
+    while (badMove) {
         scramble = [];
         for (let i = 0; i < 20; i++) {
             scramble.push(numberOptions[getRandomNumber(6)]);
         }
-        // check if moves directly next to each other involve the same letter
+        // check if moves directly next to each other has the same letter
         for (let i = 0; i < 20 - 1; i++) {
             if (scramble[i] == scramble[i + 1]) {
-                bad = true;
+                badMove = true;
                 break
             } else {
-                bad = false;
+                badMove = false;
             }
         }
     }
