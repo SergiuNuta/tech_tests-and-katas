@@ -18,20 +18,22 @@
 // A number 2 after the letter means you move that face on the cube twice.
 
 // There are 6 different moves by letter, and 3 different moves of each of them. A single clockwise move (F), a double move (F2), and single counter clockwise move (F’).
-// In total 18 possible moves (6 x 3 = 18).
+
+// First we need to scramble it.
+// A scramble is a sequence of 20 (God’s Number) moves that are performed on a solved cube.
 
 
 
 const makeScramble = () => {
     const options = ["F", "F2", "F'", "R", "R2", "R'", "U", "U2", "U'", "B", "B2", "B'", "L", "L2", "L'", "D", "D2", "D'"]; // set of moves
     const numberOptions = [0, 1, 2, 3, 4, 5]; // 0 = F, 1 = R, 2 = U, 3 = B, 4 = L, 5 = D
-    let scramble = []; // scramble of numbers will go in here
-    let scrambleMoves = []; // scramble of letters will go in here
+    let scramble = []; // scramble of numbers will go in there
+    let scrambleMoves = []; // scramble of letters will go in there
     let badMove = true;
 
     while (badMove) {
         scramble = [];
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 20; i++) {   //sequence of 20 moves that are performed on a solved cube
             scramble.push(numberOptions[getRandomNumber(6)]);
         }
         // check if moves directly next to each other has the same letter
